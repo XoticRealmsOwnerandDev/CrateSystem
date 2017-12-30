@@ -1,0 +1,5 @@
+name: CrateSystem
+version: 1.0
+api: [CLA, 3.0.0-ALPHA10]
+main: CrateSystem\Main
+author: CLADevs Team
