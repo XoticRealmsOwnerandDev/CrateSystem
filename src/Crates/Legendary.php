@@ -50,7 +50,7 @@ class Legendary{
             $inv->removeItem(Item::get(131,5,1));
             $sender->addTitle("§eOpening Crate:", "§9Legendary!");
             $this->plugin->getServer()->broadcastMessage("§b$name §ajust opened §5Mythic §9Legendary!");
-            $result = rand(1,1);
+            $result = mt_rand(1,1);
                  switch($result){
         case 1:
         $sender->getInventory()->addItem(Item::get($values[0], $values[1], $values[2])->setCustomName($values[3]));
