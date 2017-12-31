@@ -50,7 +50,7 @@ class Rare{
             $inv->removeItem(Item::get(131,3,1));
             $sender->addTitle("§eOpening Crate:", "§6Rare!");
             $this->plugin->getServer()->broadcastMessage("§b$name §ajust opened §6Rare §aCrate!");
-            $result = rand(1,1);
+            $result = mt_rand(1,1);
                  switch($result){
         case 1:
         $sender->getInventory()->addItem(Item::get($values[0], $values[1], $values[2])->setCustomName($values[3]));
