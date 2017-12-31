@@ -14,12 +14,13 @@ Step 3: Drop the ```CrateSystem-master``` folder into your server ```plugins``` 
 - [ ] Custom Enchantment on Crate Items - (PiggyCustomEnchants)
 - [ ] Purchaseable Keys - (EconomyAPI)
 - [ ] true/false crates
-- [ ] open crate with ui
 - [ ] open crate with command
 - [ ] prefix
-- [ ] key
 
 ## Features:
+
+- [x] open crate with ui
+- [x] key command
  
  ## Need Help?
  
