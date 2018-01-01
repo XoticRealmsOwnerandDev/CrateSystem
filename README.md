@@ -20,7 +20,7 @@ Step 3: Drop the ```CrateSystem-master``` folder into your server ```plugins``` 
 
 - [x] open crate with ui
 - [x] key command
-- [x] Aount
+- [x] Amount
  
  ## Need Help?
  
