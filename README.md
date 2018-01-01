@@ -9,7 +9,6 @@ Step 2: Check folder if you have ```CrateSystem-master```<br>
 Step 3: Drop the ```CrateSystem-master``` folder into your server ```plugins``` folder, restart or reload (You are good to go).
 ## TODO
 
-- [ ] Amount
 - [ ] Enchantment on Crate Items - (VanillaEnchantment)
 - [ ] Custom Enchantment on Crate Items - (PiggyCustomEnchants)
 - [ ] Purchaseable Keys - (EconomyAPI)
@@ -21,6 +20,7 @@ Step 3: Drop the ```CrateSystem-master``` folder into your server ```plugins``` 
 
 - [x] open crate with ui
 - [x] key command
+- [x] Aount
  
  ## Need Help?
  
