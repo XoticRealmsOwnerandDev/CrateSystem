@@ -38,11 +38,6 @@ class key extends PluginCommand{
             return false;
         }
 
-        $common = Item::get(131,1,1);
-        $vote = Item::get(131,2,1);
-        $rare = Item::get(131,3,1);
-        $mythic = Item::get(131,4,1);
-        $legendary = Item::get(131,5,1);
         $e = Enchantment::getEnchantment((int) 0);
 
         if (count($args) < 1) {
@@ -65,7 +60,7 @@ class key extends PluginCommand{
                     }
 
                     if (count($args) < 2) {
-                        $sender->sendMessage("Usage: /key Common <Player>");
+                        $sender->sendMessage("Usage: /key Common <player> <amount>");
                         return false;
                     }
 
@@ -81,19 +76,30 @@ class key extends PluginCommand{
                         $sender->sendMessage("§cCould not find player " . $args[1] . ".");
                         return false;
                     }
+
+                    if (count($args) < 3) {
+                        $sender->sendMessage("Usage: /key Common <player> <amount>");
+                        return false;
+                    }
+
+                    if(isset($args[2])){
+                        $amount = intval($args[2]);
+                    }
+            $amount = intval($args[2]);
+            $common = Item::get(131,1,$amount);
             $common->addEnchantment(new EnchantmentInstance($e, (int) -0));
             $common->setCustomName("§aCommon");
             $player->getInventory()->addItem($common);
 
             if($this->getPlugin()->cfg->get("from-user") == true){
-            $player->sendMessage("§eYou receive a §aCommon §eKey from §9" . $sender->getName());
+            $player->sendMessage("§eYou receive ". $args[2] . " §aCommon §eKey from §9" . $sender->getName());
             }
 
             if($this->getPlugin()->cfg->get("from-user") == false){
-                $player->sendMessage("§eYou receive a §aCommon §eKey");
+                $player->sendMessage("§eYou receive " . $args[2] . " §aCommon §eKey");
             }
 
-            $sender->sendMessage("§9" . $player->getName() . " §ehas received a §aCommon §eKey");
+            $sender->sendMessage("§9" . $player->getName() . " §ehas received " . $args[2] . " §aCommon §eKey");
             break;
             case "2":
             case "vote":
@@ -104,7 +110,7 @@ class key extends PluginCommand{
                     }
 
                     if (count($args) < 2) {
-                        $sender->sendMessage("Usage: /key Vote <Player>");
+                        $sender->sendMessage("Usage: /key Vote <player> <amount>");
                         return false;
                     }
 
@@ -114,25 +120,36 @@ class key extends PluginCommand{
                         $player = $this->getPlugin()->getServer()->getPlayer($args[1]);
                     if (!$player instanceof Player) {
                         if ($player instanceof ConsoleCommandSender) {
-                            $sender->sendMessage("§cPlease enter a player name.");
+                            $sender->sendMessage("§cPlease specify a player.");
                             return false;
                         }
                         $sender->sendMessage("§cCould not find player " . $args[1] . ".");
                         return false;
                     }
+
+                    if (count($args) < 3) {
+                        $sender->sendMessage("Usage: /key Vote <player> <amount>");
+                        return false;
+                    }
+
+                    if(isset($args[2])){
+                        $amount = intval($args[2]);
+                    }
+            $amount = intval($args[2]);
+            $vote = Item::get(131,2,$amount);
             $vote->addEnchantment(new EnchantmentInstance($e, (int) -0));
             $vote->setCustomName("§cVote");
             $player->getInventory()->addItem($vote);
 
             if($this->getPlugin()->cfg->get("from-user") == true){
-            $player->sendMessage("§eYou receive a §cVote §eKey from §9" . $sender->getName());
+            $player->sendMessage("§eYou receive " . $args[2] . " §cVote §eKey from §9" . $sender->getName());
             }
 
             if($this->getPlugin()->cfg->get("from-user") == false){
-                $player->sendMessage("§eYou receive a §cVote §eKey");
+                $player->sendMessage("§eYou receive " . $args[2] . " §cVote §eKey");
             }
 
-            $sender->sendMessage("§9" . $player->getName() . " §ehas received a §cVote §eKey");
+            $sender->sendMessage("§9" . $player->getName() . " §ehas received " . $args[2] . " §cVote §eKey");
             break;
             case "3":
             case "rare":
@@ -143,7 +160,7 @@ class key extends PluginCommand{
                     }
 
                     if (count($args) < 2) {
-                        $sender->sendMessage("Usage: /key Rare <Player>");
+                        $sender->sendMessage("Usage: /key Rare <player> <amount>");
                         return false;
                     }
 
@@ -153,25 +170,36 @@ class key extends PluginCommand{
                         $player = $this->getPlugin()->getServer()->getPlayer($args[1]);
                     if (!$player instanceof Player) {
                         if ($player instanceof ConsoleCommandSender) {
-                            $sender->sendMessage("§cPlease enter a player name.");
+                            $sender->sendMessage("§cPlease specify a player.");
                             return false;
                         }
                         $sender->sendMessage("§cCould not find player " . $args[1] . ".");
                         return false;
                     }
+
+                    if (count($args) < 3) {
+                        $sender->sendMessage("Usage: /key Rare <player> <amount>");
+                        return false;
+                    }
+
+                    if(isset($args[2])){
+                        $amount = intval($args[2]);
+                    }
+            $amount = intval($args[2]);
+            $rare = Item::get(131,3,$amount);
             $rare->addEnchantment(new EnchantmentInstance($e, (int) -0));
             $rare->setCustomName("§6Rare");
             $player->getInventory()->addItem($rare);
 
             if($this->getPlugin()->cfg->get("from-user") == true){
-            $player->sendMessage("§eYou receive a §6Rare §eKey from §9" . $sender->getName());
+            $player->sendMessage("§eYou receive " . $args[2] . " §6Rare §eKey from §9" . $sender->getName());
             }
 
             if($this->getPlugin()->cfg->get("from-user") == false){
-                $player->sendMessage("§eYou receive a §6Rare §eKey");
+                $player->sendMessage("§eYou receive " . $args[2] . " §6Rare §eKey");
             }
 
-            $sender->sendMessage("§9" . $player->getName() . " §ehas received a §6Rare §eKey");
+            $sender->sendMessage("§9" . $player->getName() . " §ehas received " . $args[2] . " §6Rare §eKey");
             break;
             case "4":
             case "mythic":
@@ -182,7 +210,7 @@ class key extends PluginCommand{
                     }
 
                     if (count($args) < 2) {
-                        $sender->sendMessage("Usage: /key Mythic <Player>");
+                        $sender->sendMessage("Usage: /key Mythic <player> <amount>");
                         return false;
                     }
 
@@ -192,25 +220,36 @@ class key extends PluginCommand{
                         $player = $this->getPlugin()->getServer()->getPlayer($args[1]);
                     if (!$player instanceof Player) {
                         if ($player instanceof ConsoleCommandSender) {
-                            $sender->sendMessage("§cPlease enter a player name.");
+                            $sender->sendMessage("§cPlease specify a player.");
                             return false;
                         }
                         $sender->sendMessage("§cCould not find player " . $args[1] . ".");
                         return false;
                     }
+
+                    if (count($args) < 3) {
+                        $sender->sendMessage("Usage: /key Mythic <player> <amount>");
+                        return false;
+                    }
+
+                    if(isset($args[2])){
+                        $amount = intval($args[2]);
+                    }
+            $amount = intval($args[2]);
+            $mythic = Item::get(131,4,$amount);
             $mythic->addEnchantment(new EnchantmentInstance($e, (int) -0));
             $mythic->setCustomName("§5Mythic");
             $player->getInventory()->addItem($mythic);
 
             if($this->getPlugin()->cfg->get("from-user") == true){
-            $player->sendMessage("§eYou receive a §5Mythic §eKey from §9" . $sender->getName());
+            $player->sendMessage("§eYou receive " . $args[2] . " §5Mythic §eKey from §9" . $sender->getName());
             }
 
             if($this->getPlugin()->cfg->get("from-user") == false){
-                $player->sendMessage("§eYou receive a §5Mythic §eKey");
+                $player->sendMessage("§eYou receive " . $args[2] . " §5Mythic §eKey");
             }
 
-            $sender->sendMessage("§9" . $player->getName() . " §ehas received a §5Mythic §eKey");
+            $sender->sendMessage("§9" . $player->getName() . " §ehas received " . $args[2] . " §5Mythic §eKey");
             break;
             case "5":
             case "legendary":
@@ -221,7 +260,7 @@ class key extends PluginCommand{
                     }
 
                     if (count($args) < 2) {
-                        $sender->sendMessage("Usage: /key Legendary <Player>");
+                        $sender->sendMessage("Usage: /key Legendary <player><amount>");
                         return false;
                     }
 
@@ -231,28 +270,39 @@ class key extends PluginCommand{
                         $player = $this->getPlugin()->getServer()->getPlayer($args[1]);
                     if (!$player instanceof Player) {
                         if ($player instanceof ConsoleCommandSender) {
-                            $sender->sendMessage("§cPlease enter a player name.");
+                            $sender->sendMessage("§cPlease specify a player.");
                             return false;
                         }
                         $sender->sendMessage("§cCould not find player " . $args[1] . ".");
                         return false;
                     }
+
+                    if (count($args) < 3) {
+                        $sender->sendMessage("Usage: /key Legendary <player> <amount>");
+                        return false;
+                    }
+
+                    if(isset($args[2])){
+                        $amount = intval($args[2]);
+                    }
+            $amount = intval($args[2]);
+            $legendary = Item::get(131,5,$amount);
             $legendary->addEnchantment(new EnchantmentInstance($e, (int) -0));
             $legendary->setCustomName("§9Legendary");
             $player->getInventory()->addItem($legendary);
 
             if($this->getPlugin()->cfg->get("from-user") == true){
-            $player->sendMessage("§eYou receive a §9Legendary §eKey from §9" . $sender->getName());
+            $player->sendMessage("§eYou receive " . $args[2] . " §9Legendary §eKey from §9" . $sender->getName());
             }
 
             if($this->getPlugin()->cfg->get("from-user") == false){
-                $player->sendMessage("§eYou receive a §9Legendary §eKey");
+                $player->sendMessage("§eYou receive " . $args[2] . " §9Legendary §eKey");
             }
 
-            $sender->sendMessage("§9" . $player->getName() . " §ehas received a §9Legendary §eKey");
+            $sender->sendMessage("§9" . $player->getName() . " §ehas received " . $args[2] . " §9Legendary §eKey");
             break;
             default:
-            $sender->sendMessage("§cPlease use /key <key> <player>");
+            $sender->sendMessage("§cPlease use /key <key> <player> <amount>");
             break;
             }
             return true;
