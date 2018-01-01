@@ -47,7 +47,11 @@ class key extends PluginCommand{
 
         if (count($args) < 1) {
             $sender->sendMessage("§b===>§eKeys§b<===");
-            $sender->sendMessage("§a/key Common §e: §bGet Common key.");
+            $sender->sendMessage("§a/key Common <player> §e: §bGet Common key.");
+            $sender->sendMessage("§c/key Vote <player> §e: §bGet Vote key.");
+            $sender->sendMessage("§6/key Rare <player> §e: §bGet Rare key.");
+            $sender->sendMessage("§5/key Mythic <player> §e: §bGet Mythic key.");
+            $sender->sendMessage("§9/key Legendary <player> §e: §bGet Legendary key.");
             $sender->sendMessage("§b===>§eKeys§b<===");
             return false;
         }
@@ -71,10 +75,10 @@ class key extends PluginCommand{
                         $player = $this->getPlugin()->getServer()->getPlayer($args[1]);
                     if (!$player instanceof Player) {
                         if ($player instanceof ConsoleCommandSender) {
-                            $sender->sendMessage("§cPlease enter a player name.");
+                            $sender->sendMessage("§cPlease specify a player.");
                             return false;
                         }
-                        $sender->sendMessage("§cThat Player doesnt exit.");
+                        $sender->sendMessage("§cCould not find player " . $args[1] . ".");
                         return false;
                     }
             $common->addEnchantment(new EnchantmentInstance($e, (int) -0));
@@ -113,7 +117,7 @@ class key extends PluginCommand{
                             $sender->sendMessage("§cPlease enter a player name.");
                             return false;
                         }
-                        $sender->sendMessage("§cThat Player doesnt exit.");
+                        $sender->sendMessage("§cCould not find player " . $args[1] . ".");
                         return false;
                     }
             $vote->addEnchantment(new EnchantmentInstance($e, (int) -0));
@@ -152,7 +156,7 @@ class key extends PluginCommand{
                             $sender->sendMessage("§cPlease enter a player name.");
                             return false;
                         }
-                        $sender->sendMessage("§cThat Player doesnt exit.");
+                        $sender->sendMessage("§cCould not find player " . $args[1] . ".");
                         return false;
                     }
             $rare->addEnchantment(new EnchantmentInstance($e, (int) -0));
@@ -191,7 +195,7 @@ class key extends PluginCommand{
                             $sender->sendMessage("§cPlease enter a player name.");
                             return false;
                         }
-                        $sender->sendMessage("§cThat Player doesnt exit.");
+                        $sender->sendMessage("§cCould not find player " . $args[1] . ".");
                         return false;
                     }
             $mythic->addEnchantment(new EnchantmentInstance($e, (int) -0));
@@ -230,7 +234,7 @@ class key extends PluginCommand{
                             $sender->sendMessage("§cPlease enter a player name.");
                             return false;
                         }
-                        $sender->sendMessage("§cThat Player doesnt exit.");
+                        $sender->sendMessage("§cCould not find player " . $args[1] . ".");
                         return false;
                     }
             $legendary->addEnchantment(new EnchantmentInstance($e, (int) -0));
