@@ -2,6 +2,10 @@
 
 - ```DevTools``` to load source folder.
 
+# Idea:
+
+please give me an idea in issue bar (Thank you!)
+
 # How to install
 
 Step 1: Extract ```CrateSystem-master.zip```<br>
@@ -11,7 +15,6 @@ Step 3: Drop the ```CrateSystem-master``` folder into your server ```plugins``` 
 
 - [ ] Enchantment on Crate Items - (VanillaEnchantment)
 - [ ] Custom Enchantment on Crate Items - (PiggyCustomEnchants)
-- [ ] Purchaseable Keys - (EconomyAPI)
 - [ ] true/false crates
 - [ ] open crate with command
 - [ ] prefix
@@ -21,6 +24,7 @@ Step 3: Drop the ```CrateSystem-master``` folder into your server ```plugins``` 
 - [x] open crate with ui
 - [x] key command
 - [x] Amount
+- [x] Purchaseable Keys - (EconomyAPI)
  
  ## Need Help?
  
