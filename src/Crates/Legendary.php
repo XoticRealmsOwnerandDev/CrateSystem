@@ -49,7 +49,7 @@ class Legendary{
             $level->addParticle(new LavaParticle($pos1));
             $inv->removeItem(Item::get(131,5,1));
             $sender->addTitle("§eOpening Crate:", "§9Legendary!");
-            $this->plugin->getServer()->broadcastMessage("§b$name §ajust opened §5Mythic §9Legendary!");
+            $this->plugin->getServer()->broadcastMessage("§b$name §ajust opened §9Legendary!");
             $result = mt_rand(1,1);
                  switch($result){
         case 1:
