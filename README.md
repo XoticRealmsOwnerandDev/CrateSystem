@@ -24,7 +24,7 @@ Step 3: Drop the ```CrateSystem-master``` folder into your server ```plugins``` 
  
  ## Need Help?
  
-  Open an Issue [here](https://github.com/CLADevsPlugins/CrateSystem/issues/new).
+  Open an Issue [here](https://github.com/CLADevs/CrateSystem/issues/new).
   
  # Developer:
  
