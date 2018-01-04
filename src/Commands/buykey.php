@@ -61,7 +61,7 @@ class buykey extends PluginCommand{
             });
 
             $form->setTitle("§9Crates Shop");
-            $form->setContent("§eSlect a key:");
+            $form->setContent("§eSelect a key:");
 
             $form->addButton("§fExit");
             $form->addButton("§aCommon", 1);
