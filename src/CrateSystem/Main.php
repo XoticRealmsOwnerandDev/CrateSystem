@@ -20,6 +20,9 @@ use pocketmine\event\server\DataPacketReceiveEvent;
 
 use pocketmine\network\mcpe\protocol\ModalFormResponsePacket;
 
+#utils
+use onebone\economyapi\EconomyAPI;
+
 #Crates
 use Crates\Common;
 use Crates\Vote;
@@ -27,7 +30,15 @@ use Crates\Rare;
 use Crates\Mythic;
 use Crates\Legendary;
 
+#Shops
+use Shop\CommonShop;
+use Shop\VoteShop;
+use Shop\RareShop;
+use Shop\MythicShop;
+use Shop\LegendaryShop;
+
 #Commands
+use Commands\buykey;
 use Commands\key;
 
 #Forms
@@ -44,7 +55,8 @@ class Main extends PluginBase implements Listener{
     public function onEnable(){
         $this->onConfigs();
         $this->onCommands();
-        $this->onEvents();
+		$this->onEvents();
+		$this->onUtils();
         $this->getLogger()->info(C::GREEN . "Enabled.");
     }
 
@@ -59,16 +71,30 @@ class Main extends PluginBase implements Listener{
 		$this->saveResource("Rare.yml");
 		$this->saveResource("Mythic.yml");
 		$this->saveResource("Legendary.yml");
-        $this->saveResource("config.yml");
-        $this->cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
+		$this->saveResource("config.yml");
+		$this->saveResource("Shop.yml");
+		$this->CommonShop = new CommonShop($this);
+		$this->VoteShop = new VoteShop($this);
+		$this->RareShop = new RareShop($this);
+		$this->MythicShop = new MythicShop($this);
+		$this->LegendaryShop = new LegendaryShop($this);
+		$this->cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
     }
 
     private function onCommands(){
+		$this->getServer()->getCommandMap()->register("buykey", new buykey("buykey", $this));
         $this->getServer()->getCommandMap()->register("key", new key("key", $this));
     }
 
     private function onEvents(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
+	}
+	
+	private function onUtils(){
+		$this->ecoapi = $this->getServer()->getPluginManager()->getPlugin("EconomyAPI");
+		if($this->ecoapi !== true){
+			$this->getLogger()->info(C::YELLOW . "Running EconomyAPI Plugin for CrateSystem.");
+		}
     }
 
 	public function createCustomForm(callable $function = null) : CustomForm {
