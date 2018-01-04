@@ -28,7 +28,7 @@ Step 3: Drop the ```CrateSystem-master``` folder into your server ```plugins``` 
   
  # Developer:
  
- * CLADevs Team - Main Developer.
+ * xXNiceYT - Main Developer.
 
 # Credits:
 
