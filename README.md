@@ -4,7 +4,7 @@
 
 # Idea:
 
-please give me an idea in issue bar (Thank you!)
+please give us an idea in issue bar (Thank you!)
 
 # How to install
 
@@ -32,8 +32,7 @@ Step 3: Drop the ```CrateSystem-master``` folder into your server ```plugins``` 
   
  # Developer:
  
- * xXNiceYT - Main Developer.
+ * CLADevs Team - Main Developer.
+ 
 
-# Credits:
-
- * [DaPigGuy](https://github.com/DaPigGuy)
+ * [DaPigGuy](https://github.com/DaPigGuy) - Item Config.
