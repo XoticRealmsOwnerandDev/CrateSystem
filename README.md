@@ -1,16 +1,7 @@
-# Requirement
+# Phar
 
-- ```DevTools``` to load source folder.
+# [Download phar here](https://poggit.pmmp.io/ci/CLADevs/CrateSystem)
 
-# Idea:
-
-please give us an idea in issue bar (Thank you!)
-
-# How to install
-
-Step 1: Extract ```CrateSystem-master.zip```<br>
-Step 2: Check folder if you have ```CrateSystem-master```<br>
-Step 3: Drop the ```CrateSystem-master``` folder into your server ```plugins``` folder, restart or reload (You are good to go).
 ## TODO
 
 - [ ] Enchantment on Crate Items - (VanillaEnchantment)
@@ -33,6 +24,5 @@ Step 3: Drop the ```CrateSystem-master``` folder into your server ```plugins``` 
  # Developer:
  
  * CLADevs Team - Main Developer.
- 
 
  * [DaPigGuy](https://github.com/DaPigGuy) - Item Config.
