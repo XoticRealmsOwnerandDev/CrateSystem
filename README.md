@@ -1,6 +1,6 @@
 # Phar
 
-# [Download phar here](https://poggit.pmmp.io/ci/CLADevs/CrateSystem)
+# [Download phar here](https://poggit.pmmp.io/ci/CLADevs/CrateSystem/~)
 
 ## TODO
 
