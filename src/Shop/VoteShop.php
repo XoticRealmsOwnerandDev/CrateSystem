@@ -58,7 +58,7 @@ class VoteShop{
 
             $level->addSound(new EndermanTeleportSound($pos1));
 
-            $sender->sendMessage(C::WHITE . "You bough crate: " . C::RED . "Vote " . C::AQUA . "for " . C::YELLOW . "$" . $hasmoneycfg);
+            $sender->sendMessage(C::WHITE . "You bought crate: " . C::RED . "Vote " . C::AQUA . "for " . C::YELLOW . "$" . $hasmoneycfg);
         }else{
             $sender->sendMessage(C::RED . "You don't have enough money to buy " . C::RED . "Vote Crate");
             $sender->sendMessage(C::AQUA . "You only have: " . C::YELLOW . "$" . $money);
